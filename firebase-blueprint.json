@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "description": "User email address" },
+        "fullName": { "type": "string", "description": "Full name in Arabic/English" },
+        "role": { "type": "string", "description": "User role: patient, pathologist, technician, physician, researcher, admin" },
+        "mrn": { "type": "string", "description": "Medical Record Number for patients" },
+        "phone": { "type": "string", "description": "Phone number" },
+        "gender": { "type": "string", "description": "Gender: male or female" },
+        "age": { "type": "number", "description": "Patient age in years" },
+        "department": { "type": "string", "description": "Department name for staff" },
+        "licenseNumber": { "type": "string", "description": "License number for physicians/pathologists" },
+        "createdAt": { "type": "string", "description": "Account registration timestamp" }
+      }
+    },
+    "Sample": {
+      "collection": "samples",
+      "fields": {
+        "id": { "type": "string", "description": "Unique sample identifier (e.g. PT-2026-001)" },
+        "patientUid": { "type": "string", "description": "Patient auth UID for direct patient access" },
+        "patient": { "type": "object", "description": "Patient details (fullName, mrn, age, gender, phone, email)" },
+        "specimenType": { "type": "string", "description": "Biopsy, Resection, FNA, etc." },
+        "anatomicalSite": { "type": "string", "description": "Organ and anatomical site" },
+        "processingStatus": { "type": "string", "description": "draft, received, preparing, scanning, analyzing, completed" },
+        "review": { "type": "object", "description": "Pathologist review status, impression, approval" },
+        "quantitative": { "type": "object", "description": "DAI percent, healthy volume, damaged volume, measurements" }
+      }
+    },
+    "Inquiry": {
+      "collection": "inquiries",
+      "fields": {
+        "id": { "type": "string", "description": "Inquiry document id" },
+        "patientUid": { "type": "string", "description": "Patient auth UID" },
+        "patientName": { "type": "string", "description": "Patient full name" },
+        "sampleId": { "type": "string", "description": "Sample ID the inquiry relates to" },
+        "subject": { "type": "string", "description": "Subject of the message" },
+        "message": { "type": "string", "description": "Question or inquiry text" },
+        "status": { "type": "string", "description": "open, answered, resolved" },
+        "reply": { "type": "string", "description": "Medical staff response" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PanTissue AI",
+  "description": "منصة مخبرية وطبية مساندة للتشخيص النسيجي ثلاثي الأبعاد وحساب مؤشر الضمور الرقمي (DAI)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
